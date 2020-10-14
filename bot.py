@@ -12,7 +12,6 @@ from pytz import timezone
 from dotenv import load_dotenv
 from discord.ext import commands
 
-APIKEY = open("finnkey.txt","r").readline()
 #TOKEN = open("bot.txt","r").readline()
 TOKEN = os.getenv("SECRET_TOKEN")
 
