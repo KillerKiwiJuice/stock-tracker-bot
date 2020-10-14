@@ -9,10 +9,12 @@ from datetime import datetime
 import pickle
 import discord
 from pytz import timezone
+from dotenv import load_dotenv
 from discord.ext import commands
 
 APIKEY = open("finnkey.txt","r").readline()
-TOKEN = open("bot.txt","r").readline()
+#TOKEN = open("bot.txt","r").readline()
+TOKEN = os.getenv("SECRET_TOKEN")
 
 #todo
 #finnhub_client = finnhub.Client(api_key=APIKEY)
@@ -68,12 +70,6 @@ leaderboard_biggestwin=load_obj('leaderboard_biggestwin')
 leaderboard_biggestloss=load_obj('leaderboard_biggestloss')
 
 ######### debug
-temp = {}
-leaderboard_winrate={}
-database={}
-leaderboard_biggestwin={}
-leaderboard_biggestloss={}
-leaderboard_totalplays={}
 
 @bot.event
 async def on_ready():
